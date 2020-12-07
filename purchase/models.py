@@ -17,4 +17,4 @@ class PurchaseStatusModel(models.Model):
             ("delivered", "Delivered"),
         ),
     )
-    created_at = models.DateField(auto_now_add=True)
+    created_at = models.DateField()

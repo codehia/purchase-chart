@@ -18,10 +18,10 @@ END_DATE = parser.parse("31st March 2020 10 pm")
 class Command(BaseCommand):
     def _create_fake_status_data(self, purchase_data):
         purchase_status_data = []
-        fake = Faker()
         number_of_statuses = range(1, random.randint(1, 4))
         for choice_id in number_of_statuses:
-            created_at = fake.date_time_between_dates(START_DATE, END_DATE)
+            fake = Faker()
+            created_at = fake.date_between_dates(START_DATE, END_DATE)
             purchase_status_data.append(
                 PurchaseStatusModel(
                     purchase=purchase_data,
